@@ -54,3 +54,5 @@ console.log(constructor)
 let cosa = ["Vatista", "Heathcliff", "DULLAHAN", "▄ ▄ ▄ ▄ ▄", "Sancho", "Philip"]
 cosa.copyWithin(5,3)
 console.log(cosa)
+
+//
