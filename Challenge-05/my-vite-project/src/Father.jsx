@@ -1,14 +1,13 @@
-import React, {useCallback, useState} from "react";
+import {useCallback, useState} from "react";
 import {Son} from "./Son"
 
 export const Father = () => {
     const list = [2, 4, 6, 8, 10]
     const [valor, setValor] = useState(0)
 
-    const increment = useCallback((num) => {
-        setValor((valor) => valor+num)
-    }
-, [])
+    const mostrarNumero = useCallback((num) => {
+        setValor(valor+num)
+    }, [])
 
     return (
         <div>
@@ -21,7 +20,7 @@ export const Father = () => {
                         <Son 
                             key={idx}
                             numero={n}
-                            increment={increment}
+                            increment={mostrarNumero}
                         />
                     )
                 })
