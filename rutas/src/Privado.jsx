@@ -10,7 +10,7 @@ const Privado = ({children}) =>{
         })
     }
     const {logged} = useContext(UserContext)
-    return logged ? children : <>Error 403 <br/> <button onClick={back}>Volver al Inicio</button></> 
+    return logged ? children : <>Error 403 - Por favor inicia sesión<br/> <button onClick={back}>Volver al Inicio</button></> 
 }
 
 export default Privado
