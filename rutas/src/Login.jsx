@@ -23,7 +23,7 @@ export const Login = () => {
                 <input placeholder="Ingresa tu Usuario" onChange={(e) => setInput(e.target.value)}/>
                 <br/>
                 <br/>
-                <button onClick={log}>Inicia Sesión</button>
+                <button onClick={log} disabled={input.trim() === ""}>Inicia Sesión</button>
             </div>
             
         </>
