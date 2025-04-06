@@ -5,10 +5,14 @@ import App from './App.jsx'
 import Registro from './Registro.jsx'
 import { Provider } from 'react-redux'
 import { store } from './store/store.jsx'
+import Login from './Login.jsx'
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
     <Provider store={store}>
-      <Registro />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
       
 )
