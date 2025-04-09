@@ -31,7 +31,7 @@ export const authSlice = createSlice({
             state.errorMessage = action.payload?.errorMessage || null;
             state.stats = 'not-authenticated';
         },
-        checkingCredentials:(state, action) =>{
+        checkingCredentials:() =>{
             console.log('checking')
         }
     }

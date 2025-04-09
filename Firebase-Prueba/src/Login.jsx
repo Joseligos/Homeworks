@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useState, useEffect } from "react"
 import { loginAuth } from "./store/slices/loginAuth"
 import { useNavigate } from "react-router-dom"
+import { googleAuth } from "./store/slices/googleAuth"
 
 const Login = () => {
     const dispatch = useDispatch()
@@ -16,6 +17,11 @@ const Login = () => {
     const onLogin = (event) => {
         event.preventDefault()
         dispatch(loginAuth({email, password}))
+    }
+
+    const onGoogleLogin = (event) => {
+        event.preventDefault()
+        dispatch(googleAuth())
     }
 
     useEffect(() => {
@@ -34,6 +40,8 @@ const Login = () => {
                     <button type="submit">Login</button>
                 </form>
                 {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+                <br/>
+                <button onClick={onGoogleLogin}>Log in with Google!</button>
             </div>
         </>
     )
