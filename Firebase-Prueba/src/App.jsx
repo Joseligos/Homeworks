@@ -5,6 +5,8 @@ import Login from './Login'
 import { useSelector } from 'react-redux'
 import Home from './Home'
 import { Crud } from './Crud'
+import DataComponent from './DataComponent'
+import RealTimeMessages from "./RealTimeMessages"
 
 function App() {
   const { stats } = useSelector((state) => state.auth);
@@ -14,7 +16,9 @@ function App() {
       <Route path="/Login" element={<Login/>}></Route>
       <Route path="/Home" element={
         stats === "authenticated" ? <Home/> : <Navigate to="/Login"/>}></Route>
-      <Route path="/" element={<Crud/>}></Route>
+      <Route path="/Crud" element={<Crud/>}></Route>
+      <Route path="/DataComponent" element={<DataComponent/>}></Route>
+      <Route path="/" element={<RealTimeMessages/>}></Route>
     </Routes>
   )
 }

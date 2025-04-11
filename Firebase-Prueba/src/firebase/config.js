@@ -4,6 +4,7 @@ import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { getStorage } from "firebase/storage"
 import { getFirestore } from "firebase/firestore"
+import { getDatabase, ref, set, push, onValue } from "firebase/database"
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -16,6 +17,7 @@ const firebaseConfig = {
   authDomain: "react-juan.firebaseapp.com",
   projectId: "react-juan",
   storageBucket: "react-juan.firebasestorage.app",
+  databaseURL: "https://react-juan-default-rtdb.firebaseio.com",
   messagingSenderId: "1067097718456",
   appId: "1:1067097718456:web:acb68ec1931b3a96e63e4d",
   measurementId: "G-BP9G56PKZP"
@@ -27,5 +29,6 @@ const auth = getAuth()
 const provider = new GoogleAuthProvider()
 const firebaseStorage = getStorage(app)
 const db = getFirestore()
+const datab = getDatabase(app)
 
-export {app, auth, provider, firebaseStorage, db}
+export {app, auth, provider, firebaseStorage, db, datab, ref, set, push, onValue}
